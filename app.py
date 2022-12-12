@@ -1,5 +1,6 @@
 import sys
 from flask import Flask
+from flask_cors import CORS
 
 #sys.path.insert(0, r"C:\Users\lucia\OneDrive\Área de Trabalho\ProjetosDev\FlaskDemo\src\controladores")
 from Gerar_Contas_Pagar_Receber_Decimo_Terceiro import upload_decimo_terceiro
@@ -9,6 +10,7 @@ from Gerar_Contas_Pagar_Receber_Flash  import upload_flash
 from Criar_Invoice_Wide_Brazil  import download_invoice
 
 app = Flask(__name__)
+cors = CORS(app)
 
 
 @app.route('/upload-decimo')
