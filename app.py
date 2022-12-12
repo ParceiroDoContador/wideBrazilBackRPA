@@ -10,7 +10,7 @@ from Gerar_Contas_Pagar_Receber_Flash  import upload_flash
 from Criar_Invoice_Wide_Brazil  import download_invoice
 
 app = Flask(__name__)
-cors = CORS(app)
+CORS(app)
 
 
 @app.route('/upload-decimo')
