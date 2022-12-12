@@ -1,6 +1,6 @@
 import sys
 from flask import Flask, make_response
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 
 #sys.path.insert(0, r"C:\Users\lucia\OneDrive\Área de Trabalho\ProjetosDev\FlaskDemo\src\controladores")
 from Gerar_Contas_Pagar_Receber_Decimo_Terceiro import upload_decimo_terceiro
@@ -22,27 +22,33 @@ def _build_cors_preflight_response():
 
 @app.route('/upload-decimo')
 def uploadDecimo():
+    _build_cors_preflight_response()
     upload_decimo_terceiro()
-    return "Décimo Funcionando"
+    return "Success", 200
 
 @app.route('/upload-ferias')
 def uploadFerias():
+    _build_cors_preflight_response()
     upload_ferias()
-    return "Férias Funcionando"
+    return "Success", 200
 
 @app.route('/upload-seguro')
 def uploadSeguro():
+    _build_cors_preflight_response()
     upload_seguro()
-    return "Seguro Funcionando"
+    return "Success", 200
 
 @app.route('/upload-flash')
 def uploadFlash():
+    _build_cors_preflight_response()
     upload_flash()
-    return "Flash Funcionando"
+    return "Success", 200
 
 @app.route('/download-invoice')
 def downloadInvoice():
+    _build_cors_preflight_response()
     download_invoice()
-    return "Invoice Gerado"
+    return "Success", 200
+
 
 app.run(debug=True, port=3000)
