@@ -55,5 +55,5 @@ def downloadInvoice():
     res = Response(status=200)
     return res
 
-app.run(debug=True, port='')
+app.run(debug=False, port='')
 
