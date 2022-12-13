@@ -1,4 +1,4 @@
-from flask import Flask, make_response
+from flask import Flask, make_response, Response
 from flask_cors import CORS
 
 #sys.path.insert(0, r"C:\Users\lucia\OneDrive\Área de Trabalho\ProjetosDev\FlaskDemo\src\controladores")
@@ -24,31 +24,36 @@ def _build_cors_preflight_response():
 def uploadDecimo():
     _build_cors_preflight_response()
     upload_decimo_terceiro()
-    return "Success", 200
+    res = Response(status=200)
+    return res
 
 @app.route('/upload-ferias')
 def uploadFerias():
     _build_cors_preflight_response()
     upload_ferias()
-    return "Success", 200
+    res = Response(status=200)
+    return res
 
 @app.route('/upload-seguro')
 def uploadSeguro():
     _build_cors_preflight_response()
     upload_seguro()
-    return "Success", 200
+    res = Response(status=200)
+    return res
 
 @app.route('/upload-flash')
 def uploadFlash():
     _build_cors_preflight_response()
     upload_flash()
-    return "Success", 200
+    res = Response(status=200)
+    return res
 
 @app.route('/download-invoice')
 def downloadInvoice():
     _build_cors_preflight_response()
     download_invoice()
-    return "Success", 200
+    res = Response(status=200)
+    return res
 
-app.run(debug=True, port=8000)
+app.run(debug=True, port='')
 
