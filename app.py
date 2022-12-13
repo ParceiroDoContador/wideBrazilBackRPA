@@ -1,4 +1,3 @@
-import sys
 from flask import Flask, make_response
 from flask_cors import CORS
 
@@ -8,7 +7,6 @@ from Gerar_Contas_Pagar_Receber_Ferias import upload_ferias
 from Gerar_Contas_Pagar_Receber_Seguro  import upload_seguro
 from Gerar_Contas_Pagar_Receber_Flash  import upload_flash
 from Criar_Invoice_Wide_Brazil  import download_invoice
-
 
 
 app = Flask(__name__)
@@ -52,5 +50,5 @@ def downloadInvoice():
     download_invoice()
     return "Success", 200
 
-app.run(debug=True, port=8080)
+app.run(debug=True, port=8000)
 
